@@ -14,9 +14,15 @@ describe('An Object in JavaScript', function() {
   });
 
   it('is not empty when one item is in the cart', function() {
-    var cart = new ShoppingCart();
     expect(typeof ShoppingCart.prototype.fill).toEqual("function");
+    var cart = new ShoppingCart();
     cart.fill("cans of ready-made spaghetti");
     expect(cart.items).toContain("cans of ready-made spaghetti");
   });
+
+  it('begins with an empty shopping cart', function() {
+    var cart = new ShoppingCart();
+    expect(cart.items).toEqual([]);
+  });
 });
+
